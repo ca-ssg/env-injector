@@ -1,22 +1,28 @@
+version: 2
+
 builds:
   - env:
       - CGO_ENABLED=0
     goos:
-      - windows
-      - darwin
       - linux
+      - darwin
+      - windows
     goarch:
       - amd64
-      - 386
+      - "386"
     ignore:
       - goos: darwin
-        goarch: 386
-archive:
-  format: tar.gz
-  files:
-    - README.md
-    - LICENSE
+        goarch: "386"
+
+archives:
+  - name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    formats:
+      - tar.gz
+    files:
+      - README.md
+      - LICENSE
+
 release:
   github:
-    owner: okzk
+    owner: ca-ssg
     name: env-injector
