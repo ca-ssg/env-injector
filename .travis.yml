@@ -1,9 +1,0 @@
-language: go
-go:
-  - 1.x
-before_install:
-  - go get -v github.com/aws/aws-sdk-go
-script:
-  - go test
-after_success:
-  - test -n "$TRAVIS_TAG" && curl -sL https://git.io/goreleaser | bash
