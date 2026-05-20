@@ -3,7 +3,7 @@ module github.com/okzk/env-injector
 go 1.19
 
 require (
-	github.com/aws/aws-sdk-go v1.44.108
+	github.com/aws/aws-sdk-go v1.55.8
 	gopkg.in/yaml.v2 v2.4.0
 )
 
